@@ -73,7 +73,7 @@ asi dan penghapusan kata berhenti.
 
 ### Kredit
 
-Aplikasi ini dikembangkan oleh [Imam](https://github.com/imam-muhtadi) sebagai bagian dari proyek kursus Manajemen Pengetahuan.
+Aplikasi ini dikembangkan oleh [Imam](https://github.com/bukanmakmum) sebagai bagian dari proyek kursus Manajemen Pengetahuan.
 
 ### Lisensi
 
