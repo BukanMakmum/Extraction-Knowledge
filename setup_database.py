@@ -9,11 +9,7 @@ def create_table():
             database="project_uas"
         )
         c = conn.cursor()
-        c.execute('''CREATE TABLE IF NOT EXISTS knowledge
-                     (id INT AUTO_INCREMENT PRIMARY KEY,
-                     text TEXT,
-                     processed_text TEXT,
-                     category TEXT)''')
+        c.execute('''CREATE TABLE IF NOT EXISTS extracted_knowledge (category VARCHAR(255), sentence TEXT, accuracy FLOAT)''')
         conn.commit()
         conn.close()
         print("Table created successfully!")
