@@ -1,0 +1,608 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-Regular.woff2") format("woff2"),
+    url("../fonts/Ubuntu-Regular.woff") format("woff");
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 15px;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+/* CSS untuk tampilan desktop */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* CSS untuk tampilan tablet */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+/* CSS untuk tampilan ponsel */
+@media (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+}
+
+/* Konten */
+.content {
+  text-align: center;
+  padding: 40px;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.logo:hover {
+  transform: scale(1.2); /* Memperbesar ukuran logo */
+  transition: transform 0.3s ease-in-out; /* Animasi perubahan ukuran */
+  /* Efek lain seperti perubahan warna atau bayangan juga dapat ditambahkan */
+}
+
+/* Mengatur ukuran standar logo */
+@media (max-width: 600px) {
+  .logo {
+    width: 80px;
+    height: auto;
+  }
+}
+
+/* Form Ekstraksi */
+form {
+  margin-top: 20px;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Tampilan hasil ekstraksi */
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Tampilan hasil ekstraksi */
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Tabel */
+.table-container {
+  max-height: 260px;
+  min-height: 260px;
+  overflow-y: scroll;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table-container th,
+.table-container td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-container th {
+  background-color: #ffcc28;
+  position: sticky;
+  top: 0;
+}
+
+/* Mengubah ukuran font pada sel-sel tabel */
+.table-container td {
+  font-size: 14px;
+}
+
+.table-container th:nth-child(1),
+.table-container td:nth-child(1) {
+  width: 4%;
+  text-align: center; /* Ubah nilai width sesuai kebutuhan untuk kolom A */
+}
+
+.table-container th:nth-child(2) {
+  width: 70%; /* Ubah nilai width sesuai kebutuhan untuk kolom B */
+  text-align: center;
+}
+.table-container td:nth-child(2) {
+  width: 70%; /* Ubah nilai width sesuai kebutuhan untuk kolom B */
+}
+
+.table-container th:nth-child(3) {
+  width: 16%;
+  text-align: center;
+}
+
+.table-container td:nth-child(3) {
+  width: 16%;
+  text-align: center; /* Ubah nilai width sesuai kebutuhan untuk kolom B */
+  color: red;
+  font-style: italic; /* Membuat teks menjadi miring */
+}
+
+.table-container th:nth-child(4) {
+  width: 10%;
+  text-align: center;
+}
+
+.table-container td:nth-child(4) {
+  width: 10%;
+  text-align: center; /* Ubah nilai width sesuai kebutuhan untuk kolom B */
+  color: royalblue;
+  font-style: italic; /* Membuat teks menjadi miring */
+}
+
+.table-container tr:nth-child(even) {
+  background-color: #edede1; /* Warna latar belakang baris genap */
+}
+
+.table-container tr:nth-child(odd) {
+  background-color: #ffffff; /* Warna latar belakang baris ganjil */
+}
+
+.table-container tr:hover {
+  background-color: #f9ff8b; /* Warna latar belakang saat sorotan mouse */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 10px;
+  background-color: #f40e0e;
+  color: whitesmoke;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+  z-index: 9999;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ubah tata letak notifikasi pada perangkat seluler */
+@media only screen and (max-width: 600px) {
+  .notification {
+    width: 80%;
+  }
+}
+
+/* Tombol */
+/* CSS Halaman 1 */
+.button-container-page1 {
+  margin-top: 20px;
+  overflow: auto;
+  text-align: center;
+}
+
+.button-container-page1 button {
+  padding: 10px 10px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  background-color: orangered;
+  float: left;
+  margin-left: none;
+  width: 100px;
+}
+
+.button-container-page1 a {
+  padding: 10px 10px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  background-color: royalblue;
+  float: right;
+  margin-right: none;
+  width: 80px;
+}
+
+.button-container-page1 button:hover,
+.button-container-page1 a:hover {
+  background-color: red;
+}
+
+/* CSS Halaman 2 */
+.button-container-page2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: auto;
+  text-align: center;
+}
+
+.button-container-page2 button {
+  padding: 10px 10px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  background-color: orangered;
+  float: right; /* Menggunakan float: right untuk menggeser tombol ke kanan */
+  margin-right: none; /* Mengatur margin kiri */
+  width: 100px;
+}
+
+.button-container-page2 a {
+  padding: 10px 10px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  background-color: royalblue;
+
+  margin-left: none;
+  width: 80px;
+}
+
+.button-container-page2 a:first-child {
+  margin-right: auto;
+  float: right;
+  background-color: royalblue;
+}
+
+.button-container-page2 a:last-child {
+  margin-left: auto;
+  float: left;
+  background-color: black;
+}
+
+.button-container-page2 button:hover,
+.button-container-page2 a:hover {
+  background-color: red;
+}
+
+/* developer */
+.developer-info {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  margin: 5px auto;
+}
+
+.developer-info p {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.developer-info a {
+  font-weight: bold;
+  color: #464444;
+  text-decoration: none;
+  cursor: help;
+}
+
+.developer-info a:hover {
+  text-transform: uppercase;
+}
+
+.tooltip-developer-info {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.tooltip-developer-info .question-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: royalblue;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tooltip-developer-info .tooltip-text-developer-info {
+  visibility: hidden;
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-developer-info:hover .tooltip-text-developer-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* tooltip halaman 2*/
+.tooltip {
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 300px;
+  background-color: royalblue;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip.active .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.question-icon {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(6deg);
+}
+
+/* CSS khusus untuk tooltip pada elemen <th> dengan teks "Accuracy" */
+
+/* pagination table */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.pagination button {
+  width: 30px;
+  height: 30px;
+  background-color: royalblue;
+  color: #f2f2f2;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 8px;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  text-align: center;
+}
+
+.pagination button:hover {
+  background-color: red;
+}
+
+.pagination .previous::before,
+.pagination .next::after {
+  content: "\2039";
+  font-size: 18px;
+}
+
+.pagination .next::after {
+  content: "\203A";
+}
+
+/*memberi blok pada setengah kalimat dalam konten*/
+.highlight {
+  display: inline-block;
+  transform: rotate(-2deg);
+  background-color: #ffcc28;
+  padding: 4px 8px;
+  color: royalblue;
+}
+
+/*textarea-container*/
+.textarea-container {
+  position: relative;
+  width: 100%; /* Atur lebar kontainer sesuai kebutuhan Anda */
+  height: 270px; /* Atur tinggi kontainer sesuai kebutuhan Anda */
+}
+
+#myTextarea {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: none;
+  font-size: 18px; /* Ganti dengan ukuran font yang diinginkan */
+  text-align: justify;
+}
+
+#myTextarea::placeholder {
+  color: #888;
+  font-style: italic;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.textarea-container input:focus::placeholder,
+.textarea-container textarea:focus::placeholder {
+  opacity: 0;
+}
+
+/* CSS untuk container gambar */
+.image-container {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CSS untuk gambar */
+.image-container img {
+  max-width: 100%;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* CSS untuk efek transisi */
+.image-container img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* CSS untuk ukuran gambar pada layar kecil */
+@media screen and (max-width: 480px) {
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+#chart {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.chart-item {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Gaya tambahan sesuai kebutuhan */
+/* CSS untuk tombol "Buka Chat" */
+#toggle-chat {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* CSS untuk grafik chat */
+.return-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: #333333;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+  background-color: red;
+  color: #ffffff;
+}
+
+/* filter katagori*/
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.filter-container {
+  margin-right: 0px;
+}
+
+.button-container {
+  margin-left: auto;
+}
