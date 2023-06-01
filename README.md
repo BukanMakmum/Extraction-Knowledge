@@ -1,55 +1,80 @@
-Berikut adalah contoh README untuk proyek dengan kode yang Anda berikan:
+## Flask Ekstraksi Pengetahuan NLP
 
-# Proyek Pemrosesan Teks
+Ini adalah aplikasi web Flask yang melakukan ekstraksi pengetahuan menggunakan teknik pemrosesan bahasa alami (NLP). Aplikasi ini mengekstraksi pengetahuan eksplisit dari teks yang diberikan dan mengklasifikasikannya ke dalam kategori yang telah ditentukan berdasarkan file pemetaan kata kunci. Pengetahuan yang diekstraksi disimpan dalam database MySQL dan dapat divisualisasikan melalui antarmuka web.
 
-Proyek ini bertujuan untuk melakukan pemrosesan teks menggunakan pustaka Natural Language Toolkit (NLTK) dan menyimpan hasilnya ke dalam database MySQL. Pemrosesan teks yang dilakukan meliputi tokenisasi, penghapusan stopwords, dan stemming.
+### Persiapan dan Instalasi
 
-## Instalasi
+1. Install dependensi yang diperlukan dengan menjalankan perintah berikut:
+   ```
+   pip install flask mysql-connector-python nltk Sastrawi
+   ```
 
-1. Pastikan Anda sudah memiliki Python 3.x diinstal di komputer Anda.
+2. Buat database MySQL dan perbarui konfigurasi database dalam kode berikut:
+   ```python
+   db = mysql.connector.connect(
+       host="localhost",
+       user="imam",
+       password="12345",
+       database="uas_km"
+   )
+   ```
 
-2. Install pustaka NLTK dengan menjalankan perintah berikut di terminal:
+3. Buat file dengan nama `keyword_map.txt` di direktori `static/data`. File ini harus berisi pemetaan kategori ke kata kunci dalam format berikut:
+   ```
+   kategori1: katakunci1, katakunci2, katakunci3
+   kategori2: katakunci4, katakunci5
+   ...
+   ```
+
+4. Jalankan aplikasi Flask:
+   ```
+   python app.py
+   ```
+
+5. Buka browser dan kunjungi `http://localhost:5000` untuk mengakses aplikasi.
+
+### Fungsionalitas
+
+Aplikasi Flask menyediakan fungsionalitas berikut:
+
+1. **Halaman Utama** (`/`): Menampilkan halaman utama aplikasi.
+
+2. **Hasil Ekstraksi Pengetahuan** (`/result`):
+   - **GET**: Menampilkan pengetahuan yang diekstraksi dari database. Menampilkan kategori, kalimat, dan akurasi dari setiap pengetahuan yang diekstraksi.
+   - **POST**: Menerima teks input, melakukan ekstraksi pengetahuan, memasukkan pengetahuan yang diekstraksi ke dalam database, dan mengarahkan ke halaman hasil (permintaan GET).
+
+3. **Visualisasi Pengetahuan** (`/visual`): Menampilkan visualisasi dari pengetahuan yang diekstraksi. Menampilkan diagram batang dengan jumlah pengetahuan yang diekstraksi untuk setiap kategori. Anda dapat memfilter visualisasi berdasarkan kategori tertentu.
+
+4. **Reset Database** (`/reset`): Mengatur ulang database dengan menghapus tabel yang ada dan membuat tabel baru.
+
+### Struktur File
+
+Aplikasi ini memiliki struktur file berikut:
 
 ```
-pip install nltk
+- app.py               : Aplikasi Flask utama
+- static/
+  - data/
+    - keyword_map.txt  : File yang berisi pemetaan kategori ke kata kunci
+- templates/
+  - index.html         : Template HTML untuk halaman utama
+  - result.html        : Template HTML untuk halaman hasil ekstraksi pengetahuan
+  - visual.html        : Template HTML untuk halaman visualisasi pengetahuan
 ```
 
-3. Unduh data NLTK yang diperlukan dengan menjalankan perintah berikut di terminal:
+### Pustaka yang Digunakan
 
-```
-python -m nltk.downloader punkt
-python -m nltk.downloader stopwords
-```
+- Flask: Framework web untuk membangun aplikasi.
+- mysql-connector-python: Penghubung untuk database MySQL.
+- nltk: Toolkit pemrosesan bahasa alami untuk tokenis
 
-4. Install pustaka MySQL Connector untuk Python dengan menjalankan perintah berikut di terminal:
+asi dan penghapusan kata berhenti.
+- Sastrawi: Pustaka stemming untuk bahasa Indonesia.
 
-```
-pip install mysql-connector-python
-```
+### Kredit
 
-5. Pastikan Anda memiliki server MySQL yang sudah terpasang dan mengganti detail koneksi di kode `save_to_database` dengan informasi koneksi yang sesuai.
+Aplikasi ini dikembangkan oleh [Imam](https://github.com/imam-muhtadi) sebagai bagian dari proyek kursus Manajemen Pengetahuan.
 
-## Penggunaan
+### Lisensi
 
-1. Jalankan file Python `main.py`.
-
-2. Ketika program berjalan, masukkan teks yang ingin diproses.
-
-3. Program akan melakukan pemrosesan teks dengan langkah-langkah berikut:
-   - Tokenisasi: Memecah teks menjadi kalimat-kalimat dan kata-kata.
-   - Penghapusan Stopwords: Menghapus kata-kata yang tidak memiliki arti penting.
-   - Stemming: Mengubah kata-kata menjadi bentuk dasar (stem).
-
-4. Hasil pemrosesan teks akan ditampilkan di layar.
-
-5. Hasil pemrosesan teks juga akan disimpan ke dalam database MySQL.
-
-## Kontribusi
-
-Kontribusi terhadap proyek ini sangat diterima. Jika Anda memiliki saran atau perbaikan, silakan buat _pull request_ atau ajukan _issue_ baru.
-
-## Lisensi
-
-Proyek ini dilisensikan di bawah Lisensi MIT. Silakan lihat berkas [LICENSE](LICENSE) untuk informasi lebih lanjut.
-
-Terima kasih telah menggunakan proyek ini! Jika Anda memiliki pertanyaan atau masalah, jangan ragu untuk menghubungi [nama Anda atau informasi kontak Anda].
+Proyek ini dilisensikan di bawah [Lisensi MIT](LICENSE).
