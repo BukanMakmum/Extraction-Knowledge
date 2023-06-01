@@ -21,8 +21,9 @@ Ini adalah aplikasi web Flask yang melakukan ekstraksi pengetahuan menggunakan t
 
 3. Buat file dengan nama `keyword_map.txt` di direktori `static/data`. File ini harus berisi pemetaan kategori ke kata kunci dalam format berikut:
    ```
-   kategori1: katakunci1, katakunci2, katakunci3
-   kategori2: katakunci4, katakunci5
+   astronomi: planet, matahari, bulan, permukaan bumi, galaksi, bintang, orbit, tata surya, teleskop, planetarium, astrofisika, supernova, kosmologi, asteroid, komet, meteor
+   geografi: daratan, lautan, atmosfer, gunung, sungai, pulau, gletser, peta, iklim, benua, gunung berapi, lembah, hutan, perairan, badai, cuaca, pemanasan global, keanekaragaman hayati, ekosistem, geologi
+
    ...
    ```
 
