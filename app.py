@@ -11,7 +11,7 @@ try:
     db = mysql.connector.connect(
         host="localhost",
         user="imam",
-        password="Aceh2033",
+        password="12345",
         database="uas_km"
     )
     print("Connected to database successfully!")
