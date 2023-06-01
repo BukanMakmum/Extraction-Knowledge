@@ -5,7 +5,7 @@ def create_table():
         conn = mysql.connector.connect(
             host="localhost",
             user="imam",
-            password="Aceh2033",
+            password="12345",
             database="project_uas"
         )
         c = conn.cursor()
