@@ -68,6 +68,10 @@ Aplikasi ini memiliki struktur file berikut:
 - mysql-connector-python: Penghubung untuk database MySQL.
 - nltk: Toolkit pemrosesan bahasa alami untuk tokenisasi dan penghapusan kata berhenti.
 - Sastrawi: Pustaka stemming untuk bahasa Indonesia.
+###Tangkapan Layar
+
+![1](https://github.com/BukanMakmum/Extraction-Knowledge/assets/32379649/517742dd-71aa-4956-bdf0-88842f07a767)
+
 
 ### Kredit
 
