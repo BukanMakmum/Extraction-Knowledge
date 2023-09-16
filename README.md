@@ -75,7 +75,7 @@ Aplikasi ini memiliki struktur file berikut:
 
 ### Kredit
 
-Aplikasi ini dikembangkan oleh [Imam](https://github.com/bukanmakmum) sebagai bagian dari proyek kursus Manajemen Pengetahuan.
+Aplikasi ini dikembangkan oleh [Bukan Makmum](https://github.com/bukanmakmum) sebagai bagian dari proyek kursus Manajemen Pengetahuan.
 
 ### Lisensi
 
